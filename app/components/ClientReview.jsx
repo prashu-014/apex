@@ -41,7 +41,7 @@ const TestimonialSlider = () => {
   }, [paginate]);
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-white overflow-hidden min-h-[700px] flex items-center">
+    <section className="py-20 px-6 md:px-12 bg-zinc-200 overflow-hidden min-h-[700px] flex items-center">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* LEFT COLUMN: TEXT CONTENT */}

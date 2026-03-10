@@ -12,6 +12,8 @@ import {
   CheckCircle,
   Star,
   TrendingUp,
+  Calendar,
+  Rocket,
 } from "lucide-react";
 // import { Button } from "@/components/ui/button";
 // import {
@@ -113,21 +115,15 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-6xl font-bold  text-white mb-6 leading-tight">
-                Connecting Top <br />
-                <span className="gradient-text"> IT Talent</span>
-                <br />
-                with Leading Companies
+               Bridging Ideas with Scalable Technology Solutions
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Apex Bridge Solutions is your trusted partner for IT staff
-                augmentation, Salesforce solutions, and cutting-edge cloud & AI
-                services. We connect exceptional talent with innovative
-                companies worldwide.
+               Apex Bridge partners with organizations to design, develop, and deliver scalable technology solutions. From strategy to deployment, we help businesses build reliable digital products and modernize their technology infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-center">
                 {/* Primary Button: Let's Work Together */}
                 <button className="group flex items-center justify-center gap-3 bg-[#0087ff] hover:bg-[#0076e0] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 ease-in-out">
-                  <span>Let's Work Together</span>
+                  <span>Let’s Build</span>
                   <svg
                     className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
@@ -145,7 +141,7 @@ export default function Home() {
 
                 {/* Secondary Button: Chat With Us */}
                 <button className="group flex items-center justify-center gap-3 border-2 border-[#0087ff] bg-transparent text-[#0087ff] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[#0087ff]/5 transition-all duration-300">
-                  <span>Chat With Us</span>
+                  <span> let's talk.</span>
                   <div className="relative w-6 h-6 transition-transform duration-300 group-hover:scale-110">
                     {/* Simple WhatsApp-style SVG Icon */}
                     <svg
@@ -171,7 +167,7 @@ export default function Home() {
       <ClientReview />
 
       {/* Services Section */}
-      <section id="services" className="py-20">
+      {/* <section id="services" className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -197,7 +193,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-              >
+              > */}
                 {/* <Card className="h-full hover:shadow-lg transition-shadow duration-300 group">
                   <CardHeader>
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
@@ -237,11 +233,11 @@ export default function Home() {
                     </Button>
                   </CardContent>
                 </Card> */}
-              </motion.div>
+              {/* </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       {/* <section className="py-20 bg-muted/30">
@@ -352,36 +348,60 @@ export default function Home() {
         {/* <TestimonialSlider /> */}
       {/* </section>  */}
 
-      {/* CTA Section */}
-      <section id="contact" className="py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Ready to Transform Your IT Team?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Let's discuss how Apex Bridge Solutions can help you achieve your
-              business goals with our exceptional IT talent and services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* <Button size="lg" asChild>
-                <Link href="/contact">
-                  Start Conversation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/careers">Join Our Team</Link>
-              </Button> */}
-            </div>
-          </motion.div>
+    <section className="py-20 px-6 bg-black flex justify-center items-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative w-full max-w-5xl overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-blue-600 to-blue-900 px-8 py-16 text-center md:px-16 md:py-20 shadow-2xl shadow-blue-900/20"
+      >
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         </div>
-      </section>
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center">
+          <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            Ready to start your <br className="hidden md:block" /> next project?
+          </h2>
+          
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-blue-100/80 md:text-xl leading-relaxed">
+            Let's collaborate to build something extraordinary. Our team is ready to help you 
+            scale your business with modern technology.
+          </p>
+
+          <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+            {/* Primary Button */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="group flex items-center justify-center space-x-2 rounded-2xl bg-white px-8 py-4 text-lg font-bold text-blue-900 transition-all hover:bg-blue-50"
+            >
+              <span>Start Project</span>
+              <Rocket className="h-5 w-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </motion.button>
+
+            {/* Secondary Button */}
+            <motion.button
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+              whileTap={{ scale: 0.98 }}
+              className="flex items-center justify-center space-x-2 rounded-2xl border-2 border-white/30 bg-white/5 px-8 py-4 text-lg font-bold text-white backdrop-blur-sm transition-all"
+            >
+              <Calendar className="h-5 w-5" />
+              <span>Book a Call</span>
+            </motion.button>
+          </div>
+        </div>
+
+        {/* Decorative Light Glows */}
+        <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-blue-400 blur-[100px] opacity-30"></div>
+        <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-black blur-[100px] opacity-40"></div>
+      </motion.div>
+    </section>
+
+
     </div>
   );
 }

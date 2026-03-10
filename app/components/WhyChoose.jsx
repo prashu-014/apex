@@ -1,121 +1,101 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
-const stats = [
+const strengths = [
   {
-    number: "30+",
-    title: "Technologies",
-    description:
-      "Leveraging advanced technologies to drive digital innovation.",
-    image: "/images/vr.jpg",
+    title: "Certified Experts",
+    description: "Skilled developers and specialists bringing industry best practices to every project.",
+    icon: "✅",
   },
   {
-    number: "50+",
-    title: "Clients & Partners",
-    description:
-      "Delivering tailored digital solutions for leading enterprises.",
-    image: "/images/handshake.jpg",
+    title: "Technology Expertise",
+    description: "Cloud platforms, automation, and scalable architectures for high-performance solutions.",
+    icon: "🚀",
   },
   {
-    number: "2x",
-    title: "Growth y/y",
-    description:
-      "Achieving consistent year-over-year growth and innovation.",
-    image: "/images/growth.jpg",
+    title: "Client-Centric Collaboration",
+    description: "Strong partnerships to ensure solutions are perfectly aligned with your business goals.",
+    icon: "🤝",
   },
   {
-    number: "7+",
-    title: "Years in Business",
-    description:
-      "Driving digital transformation with years of proven expertise.",
-    image: "/images/globe.jpg",
+    title: "End-to-End Delivery",
+    description: "From initial planning and development to deployment and ongoing support.",
+    icon: "📦",
   },
   {
-    number: "250+",
-    title: "Global Team",
-    description:
-      "A strong global team driving innovation and transformation.",
-    image: "/images/team.jpg",
+    title: "Scalable & Reliable",
+    description: "Systems designed to scale with your growth, ensuring long-term flexibility.",
+    icon: "📈",
   },
 ];
 
+
 const containerVariant = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const cardVariant = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut"},
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.5, ease: "easeOut" } 
   },
 };
 
-export default function HomePage() {
+export default function WhyChooseUs() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-[#0c0c0c] to-black text-white px-6 lg:px-20 py-20">
-      {/* Header */}
-      <div className="grid lg:grid-cols-2 gap-10 items-start mb-16">
+    <main className="min-h-screen bg-black text-white px-6 lg:px-20 py-24">
+      {/* --- Header Section --- */}
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center mb-20">
         <div>
-          <p className="text-gray-400 uppercase tracking-widest text-sm mb-4">
+          <p className="text-blue-500 uppercase tracking-[0.2em] text-sm font-bold mb-4">
             Why Choose Us
           </p>
-
-          <h1 className="text-4xl lg:text-6xl font-semibold leading-tight">
-            Redefining Digital Transformation
+          <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+            Redefining Digital <br />
+            <span className="text-gray-500">Transformation</span>
           </h1>
         </div>
-
-        <p className="text-gray-400 text-lg leading-relaxed">
-          We accelerate digital transformation for enterprises through
-          innovative, customer-centric solutions, leveraging cutting-edge
-          technology and industry expertise to deliver measurable impact.
-        </p>
+        <div className="space-y-4">
+          <p className="text-gray-400 text-lg leading-relaxed">
+            At Apex Bridge, we partner with businesses to design, develop, and deliver scalable technology solutions that drive innovation and long-term growth.
+          </p>
+          <p className="text-gray-500 text-base leading-relaxed">
+            From concept to deployment, we help organizations modernize technology, streamline operations, and build future-ready solutions.
+          </p>
+        </div>
       </div>
 
-      {/* Cards */}
+      {/* --- Strengths Grid --- */}
       <motion.div
         variants={containerVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24"
       >
-        {stats.map((item, index) => (
+        {strengths.map((item, index) => (
           <motion.div
             key={index}
             variants={cardVariant}
-            whileHover={{ scale: 1.03 }}
-            className="relative group rounded-3xl border border-white/10 bg-gradient-to-br from-[#111] to-[#0a0a0a] p-8 overflow-hidden backdrop-blur-xl"
+            whileHover={{ y: -5 }}
+            className="p-8 rounded-2xl border border-white/10 bg-[#0a0a0a] hover:bg-[#111] transition-colors group"
           >
-            {/* Background Glow */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition duration-500" />
-
-            {/* Content */}
-            <div className="relative z-10">
-              <h2 className="text-4xl font-bold text-blue-500 mb-4">
-                {item.number}
-              </h2>
-
-              <h3 className="text-xl font-semibold mb-2">
-                {item.title}
-              </h3>
-
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {item.description}
-              </p>
-            </div>
+            <div className="text-2xl mb-4">{item.icon}</div>
+            <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-400 transition-colors">
+              {item.title}
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              {item.description}
+            </p>
           </motion.div>
         ))}
       </motion.div>
+
+     
     </main>
   );
 }
